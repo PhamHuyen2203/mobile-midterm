@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.mobilecommerce.R;
 import com.example.dals.ProductDAO.TopProduct;
 
@@ -53,10 +55,17 @@ public class TopProductAdapter extends BaseAdapter {
         TextView tvName = convertView.findViewById(R.id.tvTopProductName);
         TextView tvSold = convertView.findViewById(R.id.tvTopProductSold);
         TextView tvPrice = convertView.findViewById(R.id.tvTopProductPrice);
+        ImageView ivProduct = convertView.findViewById(R.id.ivTopProduct);
 
         tvName.setText(item.productName);
         tvSold.setText(context.getString(R.string.label_sold_count, item.totalSold));
         tvPrice.setText(String.format(Locale.getDefault(), "$%,.0f", item.price));
+
+        Glide.with(context)
+                .load(item.imageURL)
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(ivProduct);
 
         return convertView;
     }

@@ -1,110 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_background"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvRoleTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="HOME"
-        android:textColor="@color/text_primary"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/welcome_prefix"
-        android:textColor="@color/text_label_color"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvRoleTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/dashboard_title"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvSessionInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:textColor="@color/text_secondary"
-        android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_login_card"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-    <Button
-        android:id="@+id/btnBrowseProducts"
-        android:layout_width="220dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/brand_primary"
-        android:text="@string/action_browse_products"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_prefix"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnAdminManageOrders"
-        android:layout_width="220dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/admin_orders_title"
-        android:textStyle="bold"
-        android:visibility="gone" />
+            <TextView
+                android:id="@+id/tvSessionInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnAdminRevenueReport"
-        android:layout_width="220dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/revenue_report_title"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/system_functions"
+            android:textColor="@color/text_muted"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnAdminTopSelling"
-        android:layout_width="220dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/top_selling_title"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
 
-    <Button
-        android:id="@+id/btnAdminCustomerSpending"
-        android:layout_width="220dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/customer_spending_title"
-        android:textStyle="bold"
-        android:visibility="gone" />
+            <Button
+                android:id="@+id/btnBrowseProducts"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/surface_color"
+                android:text="@string/action_browse_products"
+                android:textColor="@color/brand_primary"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:drawableTop="@android:drawable/ic_menu_search"
+                android:paddingTop="12dp" />
 
-    <Button
-        android:id="@+id/btnViewCart"
-        android:layout_width="220dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/cart_title"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnViewCart"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/surface_color"
+                android:text="@string/cart_title"
+                android:textColor="@color/brand_primary"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:drawableTop="@android:drawable/ic_input_add"
+                android:paddingTop="12dp" />
 
-    <Button
-        android:id="@+id/btnMyProfile"
-        android:layout_width="220dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/profile_title"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnMyProfile"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/surface_color"
+                android:text="@string/profile_title"
+                android:textColor="@color/brand_primary"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:drawableTop="@android:drawable/ic_menu_myplaces"
+                android:paddingTop="12dp" />
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="200dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/action_logout"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnAdminManageOrders"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/surface_color"
+                android:text="@string/admin_manage_orders_short"
+                android:textColor="@color/brand_primary"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:visibility="gone"
+                android:drawableTop="@android:drawable/ic_menu_agenda"
+                android:paddingTop="12dp" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/btnAdminRevenueReport"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/surface_color"
+                android:text="@string/admin_revenue_short"
+                android:textColor="@color/brand_primary"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:visibility="gone"
+                android:drawableTop="@android:drawable/ic_menu_report_image"
+                android:paddingTop="12dp" />
+
+            <Button
+                android:id="@+id/btnAdminTopSelling"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/surface_color"
+                android:text="@string/admin_top_selling_short"
+                android:textColor="@color/brand_primary"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:visibility="gone"
+                android:drawableTop="@android:drawable/btn_star_big_on"
+                android:paddingTop="12dp" />
+
+            <Button
+                android:id="@+id/btnAdminCustomerSpending"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/surface_color"
+                android:text="@string/admin_vip_short"
+                android:textColor="@color/brand_primary"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:visibility="gone"
+                android:drawableTop="@android:drawable/ic_menu_view"
+                android:paddingTop="12dp" />
+
+        </GridLayout>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/sale_price"
+            android:text="@string/action_logout"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>

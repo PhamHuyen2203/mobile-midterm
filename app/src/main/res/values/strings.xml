@@ -82,6 +82,13 @@
     <string name="label_sold_count">Đã bán: %1$d</string>
     <string name="page_format">Trang %1$d</string>
 
+    <string name="dashboard_title">BẢNG ĐIỀU KHIỂN</string>
+    <string name="system_functions">Chức năng hệ thống</string>
+    <string name="admin_manage_orders_short">QL Đơn hàng</string>
+    <string name="admin_revenue_short">Doanh thu</string>
+    <string name="admin_top_selling_short">Bán chạy</string>
+    <string name="admin_vip_short">Khách VIP</string>
+
     <string name="message_product_inserted">Đã thêm %1$s vào giỏ hàng</string>
     <string name="message_product_quantity_updated">Sản phẩm đã có trong giỏ. Số lượng đã được tăng thêm 1</string>
 

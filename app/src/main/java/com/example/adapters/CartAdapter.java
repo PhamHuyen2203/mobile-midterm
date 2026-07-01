@@ -10,11 +10,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.mobilecommerce.R;
 import com.example.dals.CartDAO.CartItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CartAdapter extends BaseAdapter {
     private Context context;
@@ -69,11 +71,15 @@ public class CartAdapter extends BaseAdapter {
         ImageButton btnDelete = convertView.findViewById(R.id.btnDelete);
 
         tvName.setText(item.getProductName());
-        tvPrice.setText(String.format("$%.0f", item.getPrice()));
+        tvPrice.setText(String.format(Locale.getDefault(), "$%.0f", item.getPrice()));
         tvQuantity.setText(String.valueOf(item.getQuantity()));
 
-        // Placeholder for image loading (if using Glide or Picasso, add here)
-        // ivProduct.setImageResource(R.mipmap.ic_launcher);
+        // Load hình ảnh sản phẩm trong giỏ hàng
+        Glide.with(context)
+                .load(item.getImageURL())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(ivProduct);
 
         btnIncrease.setOnClickListener(v -> listener.onIncrease(item));
         btnDecrease.setOnClickListener(v -> listener.onDecrease(item));
