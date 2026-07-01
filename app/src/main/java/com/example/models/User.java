@@ -40,7 +40,9 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(
+            String username
+    ) {
         this.username = username;
     }
 
@@ -48,7 +50,9 @@ public class User {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public void setFullName(
+            String fullName
+    ) {
         this.fullName = fullName;
     }
 
@@ -56,7 +60,9 @@ public class User {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(
+            String email
+    ) {
         this.email = email;
     }
 
@@ -64,7 +70,9 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(
+            String password
+    ) {
         this.password = password;
     }
 
@@ -72,7 +80,9 @@ public class User {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(
+            String type
+    ) {
         this.type = type;
     }
 }

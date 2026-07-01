@@ -1,3 +1,62 @@
 <resources>
     <string name="app_name">MobileCommerce</string>
+    <string name="product_search_title">Tìm kiếm sản phẩm</string>
+    <string name="product_search_subtitle">Tìm theo tên hoặc khoảng giá khuyến mãi</string>
+
+    <string name="hint_product_name">Nhập tên sản phẩm</string>
+    <string name="hint_min_price">Giá từ</string>
+    <string name="hint_max_price">Giá đến</string>
+
+    <string name="action_search">Tìm kiếm</string>
+    <string name="action_searching">Đang tìm kiếm...</string>
+    <string name="action_add_to_cart">Thêm vào giỏ hàng</string>
+    <string name="action_browse_products">Mua sắm sản phẩm</string>
+
+    <string name="empty_product_result">Không tìm thấy sản phẩm phù hợp</string>
+    <string name="no_product_description">Chưa có mô tả sản phẩm</string>
+
+    <string name="error_enter_full_price_range">Vui lòng nhập đầy đủ giá từ và giá đến</string>
+    <string name="error_invalid_price">Giá nhập vào không hợp lệ</string>
+    <string name="error_negative_price">Giá không được nhỏ hơn 0</string>
+    <string name="error_min_price_greater">Giá từ phải nhỏ hơn hoặc bằng giá đến</string>
+    <string name="error_search_product">Không thể tìm kiếm sản phẩm</string>
+    <string name="error_add_to_cart">Không thể thêm sản phẩm vào giỏ hàng</string>
+    <string name="error_invalid_session">Phiên đăng nhập không hợp lệ. Vui lòng đăng nhập lại</string>
+
+    <!-- Login Strings -->
+    <string name="login_title">M-COMMERCE</string>
+    <string name="login_subtitle">Đăng nhập để tiếp tục</string>
+    <string name="label_username">Username</string>
+    <string name="hint_username">Nhập username</string>
+    <string name="label_password">Password</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+    <string name="action_login">ĐĂNG NHẬP</string>
+    <string name="action_checking">ĐANG KIỂM TRA...</string>
+    <string name="login_role_hint">Customer • Employee • Admin</string>
+    <string name="error_empty_username">Vui lòng nhập Username</string>
+    <string name="error_empty_password">Vui lòng nhập Password</string>
+    <string name="error_invalid_login">Username hoặc Password không đúng.</string>
+    <string name="error_invalid_type">Tài khoản có Type không hợp lệ.</string>
+    <string name="login_success">Đăng nhập thành công</string>
+
+    <!-- Role Home Strings -->
+    <string name="admin_dashboard_title">ADMIN DASHBOARD</string>
+    <string name="admin_welcome_prefix">Xin chào quản trị viên, </string>
+    <string name="customer_home_title">CUSTOMER HOME</string>
+    <string name="welcome_prefix">Xin chào, </string>
+    <string name="employee_home_title">EMPLOYEE HOME</string>
+    <string name="employee_welcome_prefix">Xin chào nhân viên, </string>
+    <string name="session_info_format">UserID: %1$d\nUsername: %2$s\nType: %3$s\nRole: %4$s</string>
+    <string name="action_logout">ĐĂNG XUẤT</string>
+
+    <string name="message_product_inserted">Đã thêm %1$s vào giỏ hàng</string>
+    <string name="message_product_quantity_updated">Sản phẩm đã có trong giỏ. Số lượng đã được tăng thêm 1</string>
+
+    <string name="format_price">$%1$,.0f</string>
+    <string name="format_rating">★ %1$.1f</string>
+
+    <plurals name="product_result_count">
+        <item quantity="one">%d sản phẩm</item>
+        <item quantity="other">%d sản phẩm</item>
+    </plurals>
 </resources>

@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="brand_primary">#2563EB</color>
+    <color name="brand_primary_dark">#1D4ED8</color>
+
+    <color name="text_title_color">#1C2434</color>
+    <color name="text_label_color">#344054</color>
+
+    <color name="screen_background">#F4F6FA</color>
+    <color name="surface_color">#FFFFFF</color>
+
+    <color name="text_primary">#101828</color>
+    <color name="text_secondary">#475467</color>
+    <color name="text_muted">#667085</color>
+    <color name="text_hint">#98A2B3</color>
+
+    <color name="sale_price">#D92D20</color>
+    <color name="rating_color">#B54708</color>
+    <color name="error_color">#D92D20</color>
+
+    <color name="border_color">#D0D5DD</color>
+    <color name="transparent_color">#00000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>

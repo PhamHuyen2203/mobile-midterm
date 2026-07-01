@@ -4,6 +4,7 @@ public class Product {
 
     private int productID;
     private int categoryID;
+    private String categoryName;
     private String productName;
     private double originalPrice;
     private double promotionalPrice;
@@ -17,6 +18,7 @@ public class Product {
     public Product(
             int productID,
             int categoryID,
+            String categoryName,
             String productName,
             double originalPrice,
             double promotionalPrice,
@@ -26,6 +28,7 @@ public class Product {
     ) {
         this.productID = productID;
         this.categoryID = categoryID;
+        this.categoryName = categoryName;
         this.productName = productName;
         this.originalPrice = originalPrice;
         this.promotionalPrice = promotionalPrice;
@@ -50,11 +53,23 @@ public class Product {
         this.categoryID = categoryID;
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(
+            String categoryName
+    ) {
+        this.categoryName = categoryName;
+    }
+
     public String getProductName() {
         return productName;
     }
 
-    public void setProductName(String productName) {
+    public void setProductName(
+            String productName
+    ) {
         this.productName = productName;
     }
 
@@ -62,7 +77,9 @@ public class Product {
         return originalPrice;
     }
 
-    public void setOriginalPrice(double originalPrice) {
+    public void setOriginalPrice(
+            double originalPrice
+    ) {
         this.originalPrice = originalPrice;
     }
 
@@ -70,7 +87,9 @@ public class Product {
         return promotionalPrice;
     }
 
-    public void setPromotionalPrice(double promotionalPrice) {
+    public void setPromotionalPrice(
+            double promotionalPrice
+    ) {
         this.promotionalPrice = promotionalPrice;
     }
 
@@ -78,7 +97,9 @@ public class Product {
         return imageURL;
     }
 
-    public void setImageURL(String imageURL) {
+    public void setImageURL(
+            String imageURL
+    ) {
         this.imageURL = imageURL;
     }
 
@@ -94,7 +115,9 @@ public class Product {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(
+            String description
+    ) {
         this.description = description;
     }
 }

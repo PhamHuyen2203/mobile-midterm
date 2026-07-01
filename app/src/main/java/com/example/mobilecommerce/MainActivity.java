@@ -1,90 +1,34 @@
-package com.example.mcommercemobile06;
+package com.example.mobilecommerce;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.dals.DatabaseHelper;
+import com.example.utils.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "DATABASE_TEST";
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        testDatabase();
-    }
-
-    private void testDatabase() {
-        SQLiteDatabase database = null;
-        Cursor cursor = null;
-
-        try {
-            database =
-                    DatabaseHelper.openDatabase(this);
-
-            cursor = database.rawQuery(
-                    "SELECT name " +
-                            "FROM sqlite_master " +
-                            "WHERE type = 'table' " +
-                            "AND name NOT LIKE 'sqlite_%' " +
-                            "ORDER BY name",
-                    null
-            );
-
-            StringBuilder result =
-                    new StringBuilder();
-
-            while (cursor.moveToNext()) {
-                String tableName =
-                        cursor.getString(
-                                cursor.getColumnIndexOrThrow(
-                                        "name"
-                                )
-                        );
-
-                result.append(tableName)
-                        .append("\n");
-            }
-
-            Log.d(
-                    TAG,
-                    "Danh sách bảng:\n" + result
-            );
-
-            Toast.makeText(
-                    this,
-                    "Mở database thành công",
-                    Toast.LENGTH_LONG
-            ).show();
-
-        } catch (Exception exception) {
-            Log.e(
-                    TAG,
-                    "Lỗi database",
-                    exception
-            );
-
-            Toast.makeText(
-                    this,
-                    "Lỗi: " + exception.getMessage(),
-                    Toast.LENGTH_LONG
-            ).show();
-
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-
-            if (database != null) {
-                database.close();
-            }
+        sessionManager = new SessionManager(this);
+        
+        if (!sessionManager.isLoggedIn()) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            return;
         }
+
+        String fullName = sessionManager.getFullName();
+        String role = sessionManager.getRole();
+        
+        Toast.makeText(this, "Welcome " + fullName + " (" + role + ")", Toast.LENGTH_SHORT).show();
     }
 }
