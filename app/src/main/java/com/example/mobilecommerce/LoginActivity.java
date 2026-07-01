@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dals.UserDAO;
 import com.example.models.User;
+import com.example.utils.DataImporter;
 import com.example.utils.SessionManager;
 
 public class LoginActivity extends AppCompatActivity {
@@ -32,6 +33,9 @@ public class LoginActivity extends AppCompatActivity {
     ) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Tự động chuyển dữ liệu từ JSON sang SQLite khi khởi động ứng dụng
+        DataImporter.importJsonToSqlite(this);
 
         initializeViews();
         initializeObjects();
