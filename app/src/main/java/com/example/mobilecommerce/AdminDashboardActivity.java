@@ -92,6 +92,37 @@ public class AdminDashboardActivity
                 }
         );
 
+        Button btnManageOrders = findViewById(R.id.btnAdminManageOrders);
+        btnManageOrders.setVisibility(android.view.View.VISIBLE);
+        btnManageOrders.setOnClickListener(view -> {
+            Intent intent = new Intent(this, AdminOrderListActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnRevenueReport = findViewById(R.id.btnAdminRevenueReport);
+        btnRevenueReport.setVisibility(android.view.View.VISIBLE);
+        btnRevenueReport.setOnClickListener(view -> {
+            Intent intent = new Intent(this, RevenueReportActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnTopSelling = findViewById(R.id.btnAdminTopSelling);
+        btnTopSelling.setVisibility(android.view.View.VISIBLE);
+        btnTopSelling.setOnClickListener(view -> {
+            Intent intent = new Intent(this, TopSellingActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnCustomerSpending = findViewById(R.id.btnAdminCustomerSpending);
+        btnCustomerSpending.setVisibility(android.view.View.VISIBLE);
+        btnCustomerSpending.setOnClickListener(view -> {
+            Intent intent = new Intent(this, CustomerSpendingActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btnViewCart).setVisibility(android.view.View.GONE);
+        findViewById(R.id.btnMyProfile).setVisibility(android.view.View.GONE);
+
         btnLogout.setOnClickListener(
                 view -> logout()
         );

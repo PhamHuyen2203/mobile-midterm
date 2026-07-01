@@ -93,6 +93,18 @@ public class CustomerHomeActivity
                 }
         );
 
+        Button btnViewCart = findViewById(R.id.btnViewCart);
+        btnViewCart.setOnClickListener(view -> {
+            Intent intent = new Intent(CustomerHomeActivity.this, CartActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnMyProfile = findViewById(R.id.btnMyProfile);
+        btnMyProfile.setOnClickListener(view -> {
+            Intent intent = new Intent(CustomerHomeActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
         btnLogout.setOnClickListener(
                 view -> logout()
         );

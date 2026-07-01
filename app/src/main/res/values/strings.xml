@@ -49,6 +49,39 @@
     <string name="session_info_format">UserID: %1$d\nUsername: %2$s\nType: %3$s\nRole: %4$s</string>
     <string name="action_logout">ĐĂNG XUẤT</string>
 
+    <!-- Cart Strings -->
+    <string name="cart_title">Giỏ hàng của bạn</string>
+    <string name="label_total">Tổng cộng:</string>
+    <string name="action_checkout">THANH TOÁN NGAY</string>
+    <string name="confirm_delete_title">Xóa sản phẩm</string>
+    <string name="confirm_delete_message">Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?</string>
+    <string name="confirm_checkout_title">Xác nhận thanh toán</string>
+    <string name="confirm_checkout_message">Bạn có muốn đặt hàng ngay không?</string>
+    <string name="checkout_success">Đặt hàng thành công!</string>
+    <string name="checkout_error">Lỗi thanh toán. Vui lòng thử lại.</string>
+    <string name="cart_empty">Giỏ hàng đang trống</string>
+    <string name="action_yes">Có</string>
+    <string name="action_no">Không</string>
+    <string name="action_ok">Đồng ý</string>
+    <string name="action_cancel">Hủy</string>
+
+    <!-- Profile Strings -->
+    <string name="profile_title">Hồ sơ của tôi</string>
+    <string name="label_full_name">Họ và tên:</string>
+    <string name="label_email">Email:</string>
+    <string name="label_total_orders">Tổng số đơn hàng:</string>
+    <string name="label_processing_orders">Đơn đang xử lý:</string>
+    <string name="label_total_spent">Tổng chi tiêu (Đã thanh toán):</string>
+    <string name="admin_orders_title">Quản lý Đơn hàng (Admin)</string>
+    <string name="revenue_report_title">Doanh thu theo Danh mục</string>
+    <string name="col_category">Danh mục</string>
+    <string name="col_quantity">SL bán</string>
+    <string name="col_revenue">Doanh thu</string>
+    <string name="top_selling_title">Top sản phẩm bán chạy nhất</string>
+    <string name="customer_spending_title">Xếp hạng Khách hàng VIP</string>
+    <string name="label_sold_count">Đã bán: %1$d</string>
+    <string name="page_format">Trang %1$d</string>
+
     <string name="message_product_inserted">Đã thêm %1$s vào giỏ hàng</string>
     <string name="message_product_quantity_updated">Sản phẩm đã có trong giỏ. Số lượng đã được tăng thêm 1</string>
 

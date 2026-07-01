@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/revenue_report_title"
+        android:textColor="@color/text_primary"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <TableLayout
+            android:id="@+id/tlRevenueReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_login_card"
+            android:elevation="2dp"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:background="@color/brand_primary"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:text="@string/col_category"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:gravity="center"
+                    android:text="@string/col_quantity"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:gravity="right"
+                    android:text="@string/col_revenue"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <!-- Data rows will be added dynamically -->
+
+        </TableLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

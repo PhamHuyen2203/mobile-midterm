@@ -13,10 +13,31 @@
             android:name=".AdminDashboardActivity"
             android:exported="false" />
         <activity
+            android:name=".AdminOrderListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RevenueReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TopSellingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerSpendingActivity"
+            android:exported="false" />
+        <activity
             android:name=".EmployeeHomeActivity"
             android:exported="false" />
         <activity
             android:name=".CustomerHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

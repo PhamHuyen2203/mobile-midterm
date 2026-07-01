@@ -349,6 +349,54 @@ public class ProductDAO {
         }
     }
 
+    /**
+     * Lấy danh sách sản phẩm bán chạy nhất.
+     */
+    public List<TopProduct> getTopSellingProducts(int n) {
+        List<TopProduct> products = new ArrayList<>();
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+
+        try {
+            database = DatabaseHelper.openDatabase(context);
+            String sql = "SELECT p.ProductID, p.ProductName, p.ImageURL, p.PromotionalPrice, " +
+                    "SUM(od.Quantity) AS TotalSold " +
+                    "FROM Products p " +
+                    "JOIN OrderDetails od ON p.ProductID = od.ProductID " +
+                    "JOIN Orders o ON od.OrderID = o.OrderID " +
+                    "WHERE o.Status = 'Paid' " +
+                    "GROUP BY p.ProductID, p.ProductName, p.ImageURL, p.PromotionalPrice " +
+                    "ORDER BY TotalSold DESC " +
+                    "LIMIT ?";
+
+            cursor = database.rawQuery(sql, new String[]{String.valueOf(n)});
+
+            while (cursor.moveToNext()) {
+                TopProduct top = new TopProduct();
+                top.productID = cursor.getInt(cursor.getColumnIndexOrThrow("ProductID"));
+                top.productName = cursor.getString(cursor.getColumnIndexOrThrow("ProductName"));
+                top.imageURL = cursor.getString(cursor.getColumnIndexOrThrow("ImageURL"));
+                top.price = cursor.getDouble(cursor.getColumnIndexOrThrow("PromotionalPrice"));
+                top.totalSold = cursor.getInt(cursor.getColumnIndexOrThrow("TotalSold"));
+                products.add(top);
+            }
+            return products;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (cursor != null) cursor.close();
+            if (database != null) database.close();
+        }
+    }
+
+    public static class TopProduct {
+        public int productID;
+        public String productName;
+        public String imageURL;
+        public double price;
+        public int totalSold;
+    }
+
     private Product mapProduct(
             Cursor cursor
     ) {
